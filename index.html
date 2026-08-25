@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cub Scout Pack 333 | Adventure, Leadership & Community</title>
+  <style>
+    :root {
+      --primary: #0c2340;       /* Scout Navy */
+      --primary-light: #1d3557;
+      --gold: #f4a261;          /* Warm Scout Gold */
+      --gold-bright: #e76f51;
+      --forest: #2a9d8f;        /* Outdoor Green */
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      max-width: 1050px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #e2e8f0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .btn-nav {
+      background: var(--gold);
+      color: var(--primary) !important;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 700 !important;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 70px;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(244, 162, 97, 0.2);
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      margin: 0 auto 32px;
+      color: #cbd5e1;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--gold);
+      color: var(--primary);
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, background-color 0.15s;
+    }
+
+    .btn-primary:hover {
+      background-color: #f7b27d;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Content Layout */
+    .container {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Dens Pill Grid */
+    .dens-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .den-badge {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: var(--radius);
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .den-badge small {
+      display: block;
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    /* Events List */
+    .event-card {
+      display: flex;
+      gap: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      align-items: center;
+    }
+
+    .event-date {
+      background: var(--primary);
+      color: white;
+      min-width: 70px;
+      text-align: center;
+      padding: 12px 8px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+
+    .event-date .month {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .event-date .day {
+      font-size: 1.4rem;
+      line-height: 1.1;
+    }
+
+    .event-info h4 {
+      font-size: 1.1rem;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .event-info p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Callout Banner */
+    .join-banner {
+      background: linear-gradient(135deg, var(--forest) 0%, #21867a 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .join-banner h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .join-banner p {
+      max-width: 600px;
+      margin: 0 auto 24px;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #94a3b8;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--primary-light);
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+      .event-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="brand">
+        ⚜️ <span>Pack 333</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#dens">Dens & Grades</a></li>
+        <li><a href="#events">Calendar</a></li>
+        <li><a href="#contact" class="btn-nav">Join Pack 333</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-badge">Adventure Begins Here</div>
+    <h1>Do Your Best. Discover More.</h1>
+    <p>Empowering kindergarten through 5th graders with outdoor skills, leadership, teamwork, and family fun.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Ready to Join?</a>
+      <a href="#events" class="btn-secondary">Upcoming Activities</a>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- About / Pillars -->
+    <section id="about">
+      <div class="section-title">
+        <h2>What We Do in Pack 333</h2>
+        <p>Hands-on learning, character building, and unforgettable outdoor memories.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-icon">🏕️</span>
+          <h3>Outdoor Adventures</h3>
+          <p>From weekend family campouts to nature hikes and campfire cooking, we learn to appreciate and care for the outdoors.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏎️</span>
+          <h3>Pinewood Derby & STEM</h3>
+          <p>Design, cut, and race custom wooden cars, build model rockets, and explore hands-on science and engineering challenges.</p>
+        </div>
+        <div class="card">
+          <span class="card-icon">🤝</span>
+          <h3>Community & Service</h3>
+          <p>Giving back through food drives, local park cleanups, flag ceremonies, and community leadership projects.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dens by Grade -->
+    <section id="dens" style="margin-top: 60px;">
+      <div class="section-title">
+        <h2>Dens by Grade Level</h2>
+        <p>Scouts meet with peers in age-tailored dens before coming together as a full pack.</p>
+      </div>
+
+      <div class="dens-grid">
+        <div class="den-badge">🦁 Lions<small>Kindergarten</small></div>
+        <div class="den-badge">🐯 Tigers<small>1st Grade</small></div>
+        <div class="den-badge">🐺 Wolves<small>2nd Grade</small></div>
+        <div class="den-badge">🐻 Bears<small>3rd Grade</small></div>
+        <div class="den-badge">🌲 Webelos<small>4th Grade</small></div>
+        <div class="den-badge">⚡ Arrow of Light<small>5th Grade</small></div>
+      </div>
+    </section>
+
+    <!-- Upcoming Events Preview -->
+    <section id="events" style="margin-top: 60px;">
+      <div class="section-title">
+        <h2>Upcoming Pack Highlights</h2>
+        <p>Check out what our scouts are gearing up for next.</p>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date">
+          <span class="month">Sep</span>
+          <span class="day">15</span>
+        </div>
+        <div class="event-info">
+          <h4>Pack Kickoff & Ice Cream Social</h4>
+          <p>Welcome back existing scouts and meet new families. Uniform inspection and den placement.</p>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date">
+          <span class="month">Oct</span>
+          <span class="day">18</span>
+        </div>
+        <div class="event-info">
+          <h4>Fall Family Campout</h4>
+          <p>A weekend of tent camping, stargazing, campfire skits, and nature badges.</p>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <div class="event-date">
+          <span class="month">Jan</span>
+          <span class="day">24</span>
+        </div>
+        <div class="event-info">
+          <h4>Annual Pinewood Derby Race Day</h4>
+          <p>The marquee race of the year! Gravity-powered track racing and design showcase.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contact">
+      <div class="join-banner">
+        <h2>Ready to Start Your Scout Journey?</h2>
+        <p>We welcome all boys and girls in grades K–5. Come visit our next pack meeting or reach out to our leadership team with any questions!</p>
+        <a href="mailto:contact@pack333.example.com?subject=Joining%20Pack%20333" class="btn-primary">Email Pack Leadership</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Cub Scout Pack 333 &bull; Character &bull; Citizenship &bull; Fitness &bull; Fun</p>
+    <p style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">Prepared. For Life. &bull; Hosted with GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
