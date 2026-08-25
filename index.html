@@ -9,7 +9,6 @@
       --primary: #0c2340;       /* Scout Navy */
       --primary-light: #1d3557;
       --gold: #f4a261;          /* Warm Scout Gold */
-      --gold-bright: #e76f51;
       --forest: #2a9d8f;        /* Outdoor Green */
       --bg: #f8fafc;
       --card-bg: #ffffff;
@@ -97,7 +96,6 @@
       color: white;
       text-align: center;
       padding: 80px 20px 70px;
-      position: relative;
     }
 
     .hero-badge {
@@ -143,6 +141,7 @@
       font-weight: 700;
       text-decoration: none;
       transition: transform 0.15s, background-color 0.15s;
+      display: inline-block;
     }
 
     .btn-primary:hover {
@@ -151,17 +150,19 @@
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
       color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       padding: 14px 28px;
       border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.15s;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.22);
     }
 
     /* Content Layout */
@@ -313,10 +314,17 @@
     }
 
     .join-banner p {
-      max-width: 600px;
-      margin: 0 auto 24px;
+      max-width: 620px;
+      margin: 0 auto 28px;
       font-size: 1.1rem;
       opacity: 0.95;
+    }
+
+    .join-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     /* Footer */
@@ -355,9 +363,10 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#dens">Dens & Grades</a></li>
+        <li><a href="#dens">Dens</a></li>
         <li><a href="#events">Calendar</a></li>
-        <li><a href="#contact" class="btn-nav">Join Pack 333</a></li>
+        <li><a href="mailto:info@pack333.org?subject=Inquiry%20about%20Cub%20Scout%20Pack%20333">Contact</a></li>
+        <li><a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-nav">Register on BeAScout</a></li>
       </ul>
     </nav>
   </header>
@@ -368,8 +377,8 @@
     <h1>Do Your Best. Discover More.</h1>
     <p>Empowering kindergarten through 5th graders with outdoor skills, leadership, teamwork, and family fun.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Ready to Join?</a>
-      <a href="#events" class="btn-secondary">Upcoming Activities</a>
+      <a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-primary">Register Online (BeAScout)</a>
+      <a href="mailto:info@pack333.org?subject=Joining%20Pack%20333%20-%20Information%20Request" class="btn-secondary">Ask Questions / Email Us</a>
     </div>
   </section>
 
@@ -463,8 +472,11 @@
     <section id="contact">
       <div class="join-banner">
         <h2>Ready to Start Your Scout Journey?</h2>
-        <p>We welcome all boys and girls in grades K–5. Come visit our next pack meeting or reach out to our leadership team with any questions!</p>
-        <a href="mailto:contact@pack333.example.com?subject=Joining%20Pack%20333" class="btn-primary">Email Pack Leadership</a>
+        <p>We welcome all boys and girls in grades K–5. Register directly online or get in touch with our pack committee to learn more or visit a meeting.</p>
+        <div class="join-actions">
+          <a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-primary">Register on BeAScout</a>
+          <a href="mailto:info@pack333.org?subject=Joining%20Pack%20333%20-%20Parent%20Inquiry" class="btn-secondary">Email info@pack333.org</a>
+        </div>
       </div>
     </section>
 
@@ -473,6 +485,7 @@
   <!-- Footer -->
   <footer>
     <p>Cub Scout Pack 333 &bull; Character &bull; Citizenship &bull; Fitness &bull; Fun</p>
+    <p style="margin-top: 6px;">Questions? Reach us at <a href="mailto:info@pack333.org">info@pack333.org</a></p>
     <p style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">Prepared. For Life. &bull; Hosted with GitHub Pages</p>
   </footer>
 
