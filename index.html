@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cub Scout Pack 333 | Adventure, Leadership & Community</title>
+  <title>Cub Scout Pack 333 | 2026–2027 Adventure & Calendar</title>
   <style>
     :root {
       --primary: #0c2340;       /* Scout Navy */
@@ -253,49 +253,94 @@
       margin-top: 4px;
     }
 
-    /* Events List */
+    /* Events Timeline / List */
+    .season-block {
+      margin-bottom: 40px;
+    }
+
+    .season-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .event-card {
       display: flex;
       gap: 20px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 20px;
-      margin-bottom: 16px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
       align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .event-card.featured {
+      border-left: 5px solid var(--gold);
+      background: #fffdfa;
     }
 
     .event-date {
       background: var(--primary);
       color: white;
-      min-width: 70px;
+      min-width: 80px;
       text-align: center;
-      padding: 12px 8px;
+      padding: 8px 6px;
       border-radius: 8px;
       font-weight: 700;
+      flex-shrink: 0;
     }
 
     .event-date .month {
       display: block;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       color: var(--gold);
     }
 
     .event-date .day {
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       line-height: 1.1;
     }
 
     .event-info h4 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--primary);
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .event-info p {
       color: var(--text-muted);
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+    }
+
+    .tag-highlight {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #fee2e2;
+      color: #991b1b;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+
+    .tag-recruit {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-left: 6px;
     }
 
     /* Callout Banner */
@@ -350,6 +395,13 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .event-date {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -364,7 +416,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#dens">Dens</a></li>
-        <li><a href="#events">Calendar</a></li>
+        <li><a href="#calendar">2026–27 Calendar</a></li>
         <li><a href="mailto:info@pack333.org?subject=Inquiry%20about%20Cub%20Scout%20Pack%20333">Contact</a></li>
         <li><a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-nav">Register on BeAScout</a></li>
       </ul>
@@ -373,7 +425,7 @@
 
   <!-- Hero Banner -->
   <section class="hero">
-    <div class="hero-badge">Adventure Begins Here</div>
+    <div class="hero-badge">2026–2027 Season Underway</div>
     <h1>Do Your Best. Discover More.</h1>
     <p>Empowering kindergarten through 5th graders with outdoor skills, leadership, teamwork, and family fun.</p>
     <div class="hero-actions">
@@ -395,17 +447,17 @@
         <div class="card">
           <span class="card-icon">🏕️</span>
           <h3>Outdoor Adventures</h3>
-          <p>From weekend family campouts to nature hikes and campfire cooking, we learn to appreciate and care for the outdoors.</p>
+          <p>From weekend family campouts to Monterey coastal parks and stargazing hikes, we learn to appreciate and explore the outdoors.</p>
         </div>
         <div class="card">
           <span class="card-icon">🏎️</span>
           <h3>Pinewood Derby & STEM</h3>
-          <p>Design, cut, and race custom wooden cars, build model rockets, and explore hands-on science and engineering challenges.</p>
+          <p>Build and race custom wooden cars, participate in Raingutter Regattas, and explore science and engineering hands-on.</p>
         </div>
         <div class="card">
           <span class="card-icon">🤝</span>
           <h3>Community & Service</h3>
-          <p>Giving back through food drives, local park cleanups, flag ceremonies, and community leadership projects.</p>
+          <p>Giving back through Scouting for Food, Christmas tree decorating at Christmas in the Park, toy drives, and Memorial Day flag placement.</p>
         </div>
       </div>
     </section>
@@ -427,43 +479,276 @@
       </div>
     </section>
 
-    <!-- Upcoming Events Preview -->
-    <section id="events" style="margin-top: 60px;">
+    <!-- 2026-2027 Full Calendar -->
+    <section id="calendar" style="margin-top: 60px;">
       <div class="section-title">
-        <h2>Upcoming Pack Highlights</h2>
-        <p>Check out what our scouts are gearing up for next.</p>
+        <h2>2026–2027 Pack Calendar</h2>
+        <p>All scheduled meetings, camping trips, service projects, and special pack events.</p>
       </div>
 
-      <div class="event-card">
-        <div class="event-date">
-          <span class="month">Sep</span>
-          <span class="day">15</span>
+      <!-- Fall 2026 -->
+      <div class="season-block">
+        <h3 class="season-heading">🍂 Fall 2026</h3>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Aug</span><span class="day">19</span></div>
+          <div class="event-info">
+            <h4>First Day of School & Ice Cream Social</h4>
+            <p>Kickoff gathering at the park to celebrate the new school year.</p>
+          </div>
         </div>
-        <div class="event-info">
-          <h4>Pack Kickoff & Ice Cream Social</h4>
-          <p>Welcome back existing scouts and meet new families. Uniform inspection and den placement.</p>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Aug</span><span class="day">22</span></div>
+          <div class="event-info">
+            <h4>Bull's Eye Bonanza</h4>
+            <p>Council shooting sports and outdoor activities event.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Aug</span><span class="day">28-30</span></div>
+          <div class="event-info">
+            <h4>Popcorn Sales Kickoff Weekend</h4>
+            <p>Unit fundraising storefronts and take-order sales.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">Sep</span><span class="day">2</span></div>
+          <div class="event-info">
+            <h4>Open House: Raingutter Regatta <span class="tag-recruit">Join Night</span></h4>
+            <p>6:00 PM – 7:00 PM at St. Thomas of Canterbury. Welcome new families to race boats and learn about Scouting!</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Sep</span><span class="day">6-7, 11-12</span></div>
+          <div class="event-info">
+            <h4>Popcorn Sales Storefront Weekends</h4>
+            <p>Support your scout's adventures and activities.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Sep</span><span class="day">16</span></div>
+          <div class="event-info">
+            <h4>Campers' Meeting</h4>
+            <p>Gear check and logistics prep for the Monterey campout.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">Sep</span><span class="day">18</span></div>
+          <div class="event-info">
+            <h4>Fall Pack Campout (Veterans' Memorial Park, Monterey)</h4>
+            <p>Weekend tent camping, coastal hiking, skits, and campfire fun.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Oct</span><span class="day">3</span></div>
+          <div class="event-info">
+            <h4>Pumpkin Patch Pack Outing</h4>
+            <p>Seasonal family outing, hayrides, and pumpkin picking.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Oct</span><span class="day">7</span></div>
+          <div class="event-info">
+            <h4>Parent & Committee Meeting</h4>
+            <p>Reviewing winter pack schedule, popcorn results, and leader support.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">Oct</span><span class="day">28</span></div>
+          <div class="event-info">
+            <h4>Trunk or Treat (with Troop)</h4>
+            <p>Costumes, decorated trunks, games, and candy with our partner Troop.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Nov</span><span class="day">7</span></div>
+          <div class="event-info">
+            <h4>Scouting for Food: Door Tag Drop</h4>
+            <p>Distributing donation bags and tags throughout local neighborhoods.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Nov</span><span class="day">11</span></div>
+          <div class="event-info">
+            <h4>Veterans' Day Parade</h4>
+            <p>Community honor guard and marching with local veterans.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Nov</span><span class="day">15</span></div>
+          <div class="event-info">
+            <h4>Scouting for Food: Collection Day</h4>
+            <p>Picking up and sorting non-perishable food for local food banks.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Nov</span><span class="day">18</span></div>
+          <div class="event-info">
+            <h4>Pack Meeting: Holiday Ornament Making</h4>
+            <p>Hands-on crafting workshop preparing ornaments for our park tree.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Nov</span><span class="day">23-25</span></div>
+          <div class="event-info">
+            <h4>Tree Decorating @ Christmas in the Park</h4>
+            <p>Decorating our official Pack tree in downtown San Jose.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Dec</span><span class="day">2-16</span></div>
+          <div class="event-info">
+            <h4>Annual Holiday Toy Drive</h4>
+            <p>Bring new, unwrapped toys to den & pack meetings for donation.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Dec</span><span class="day">5</span></div>
+          <div class="event-info">
+            <h4>USS Pampanito Submarine Overnight <span class="tag-highlight">Date TBD</span></h4>
+            <p>Historic naval sleepover experience in San Francisco.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Dec</span><span class="day">16</span></div>
+          <div class="event-info">
+            <h4>Pack Holiday Party & Gift Exchange</h4>
+            <p>End-of-year celebration, holiday games, and winter gift swap.</p>
+          </div>
         </div>
       </div>
 
-      <div class="event-card">
-        <div class="event-date">
-          <span class="month">Oct</span>
-          <span class="day">18</span>
-        </div>
-        <div class="event-info">
-          <h4>Fall Family Campout</h4>
-          <p>A weekend of tent camping, stargazing, campfire skits, and nature badges.</p>
-        </div>
-      </div>
+      <!-- Winter / Spring 2027 -->
+      <div class="season-block">
+        <h3 class="season-heading">🌱 Winter & Spring 2027</h3>
 
-      <div class="event-card">
-        <div class="event-date">
-          <span class="month">Jan</span>
-          <span class="day">24</span>
+        <div class="event-card">
+          <div class="event-date"><span class="month">Jan</span><span class="day">9</span></div>
+          <div class="event-info">
+            <h4>Pinewood Derby Make Day</h4>
+            <p>Car cutting, shaping, weighting, and workshop assistance.</p>
+          </div>
         </div>
-        <div class="event-info">
-          <h4>Annual Pinewood Derby Race Day</h4>
-          <p>The marquee race of the year! Gravity-powered track racing and design showcase.</p>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Jan</span><span class="day">27</span></div>
+          <div class="event-info">
+            <h4>Pinewood Derby Check-In</h4>
+            <p>Official weigh-in, car inspection, and impound.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">Jan</span><span class="day">30</span></div>
+          <div class="event-info">
+            <h4>Annual Pinewood Derby Race Day <span class="tag-highlight">Date TBC</span></h4>
+            <p>Gravity track race day, heat brackets, and design trophies.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Feb</span><span class="day">6</span></div>
+          <div class="event-info">
+            <h4>Webelos Fun Day (Hosted by Troop)</h4>
+            <p>Scout skill demos, knot tying, fire building, and bridge prep.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">Feb</span><span class="day">24</span></div>
+          <div class="event-info">
+            <h4>Blue and Gold Banquet</h4>
+            <p>Celebrating the birthday of Scouting with dinner and special recognition.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Feb</span><span class="day">27</span></div>
+          <div class="event-info">
+            <h4>Chabot Space & Science Center / Laser Tag Outing</h4>
+            <p>Planetarium visit and laser tag team challenge.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Mar</span><span class="day">20</span></div>
+          <div class="event-info">
+            <h4>Spring Pack Hike</h4>
+            <p>Exploring local Bay Area trail systems and wildlife.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Mar</span><span class="day">24</span></div>
+          <div class="event-info">
+            <h4>Pack Meeting: Fire Truck Visit</h4>
+            <p>Touring a working fire engine and learning first-aid basics.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">Apr</span><span class="day">21</span></div>
+          <div class="event-info">
+            <h4>Pack Meeting: Pull Apart Day</h4>
+            <p>STEM deconstruction project — taking apart appliances and electronics.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">Apr</span><span class="day">23-25</span></div>
+          <div class="event-info">
+            <h4>Spring Campout</h4>
+            <p>Three-day outdoor spring camping experience and badge work.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">May</span><span class="day">19</span></div>
+          <div class="event-info">
+            <h4>Parent & Planning Meeting</h4>
+            <p>Year-end reviews and summer activity preview.</p>
+          </div>
+        </div>
+
+        <div class="event-card featured">
+          <div class="event-date"><span class="month">May</span><span class="day">26</span></div>
+          <div class="event-info">
+            <h4>Rank Up & Advancement Celebration</h4>
+            <p>Scouts receive their new neckerchiefs and advance to the next rank.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">May</span><span class="day">29</span></div>
+          <div class="event-info">
+            <h4>Flags for Memorial Day</h4>
+            <p>Service project placing American flags on veteran graves.</p>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-date"><span class="month">May</span><span class="day">31</span></div>
+          <div class="event-info">
+            <h4>Memorial Day Community Observance</h4>
+            <p>Pack attendance at local Memorial Day ceremony.</p>
+          </div>
         </div>
       </div>
     </section>
