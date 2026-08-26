@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cub Scout Pack 333 | 2026–2027 Adventure & Calendar</title>
+  <title>Cub Scout Pack 333 | Grades K–5</title>
   <style>
     :root {
       --primary: #0c2340;       /* Scout Navy */
@@ -31,6 +31,20 @@
       line-height: 1.6;
     }
 
+    /* Meeting Alert Bar */
+    .meeting-bar {
+      background-color: #08172b;
+      color: #f1f5f9;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 0.92rem;
+      border-bottom: 1px solid rgba(244, 162, 97, 0.3);
+    }
+
+    .meeting-bar strong {
+      color: var(--gold);
+    }
+
     /* Navigation */
     header {
       background-color: var(--primary);
@@ -51,12 +65,12 @@
     }
 
     .brand {
-      font-size: 1.3rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
     }
 
     .brand span {
@@ -95,7 +109,7 @@
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
       color: white;
       text-align: center;
-      padding: 80px 20px 70px;
+      padding: 70px 20px 60px;
     }
 
     .hero-badge {
@@ -113,16 +127,16 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
       font-weight: 900;
       line-height: 1.15;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 650px;
-      margin: 0 auto 32px;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin: 0 auto 28px;
       color: #cbd5e1;
     }
 
@@ -136,7 +150,7 @@
     .btn-primary {
       background-color: var(--gold);
       color: var(--primary);
-      padding: 14px 28px;
+      padding: 14px 26px;
       border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
@@ -153,7 +167,7 @@
       background: rgba(255, 255, 255, 0.12);
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 14px 28px;
+      padding: 14px 26px;
       border-radius: 8px;
       font-weight: 600;
       text-decoration: none;
@@ -169,7 +183,7 @@
     .container {
       max-width: 1050px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 40px 20px 60px;
     }
 
     .section-title {
@@ -186,6 +200,42 @@
     .section-title p {
       color: var(--text-muted);
       margin-top: 6px;
+    }
+
+    /* Meeting Location Card */
+    .meeting-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .meeting-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .meeting-card p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .meeting-card a {
+      color: var(--forest);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .meeting-card a:hover {
+      text-decoration: underline;
     }
 
     /* Grid Layouts */
@@ -253,7 +303,7 @@
       margin-top: 4px;
     }
 
-    /* Events Timeline / List */
+    /* Events List */
     .season-block {
       margin-bottom: 40px;
     }
@@ -321,22 +371,22 @@
       font-size: 0.88rem;
     }
 
-    .tag-highlight {
+    .tag-recruit {
       display: inline-block;
       font-size: 0.75rem;
-      background: #fee2e2;
-      color: #991b1b;
+      background: #fef3c7;
+      color: #92400e;
       padding: 2px 8px;
       border-radius: 999px;
       font-weight: 600;
       margin-left: 6px;
     }
 
-    .tag-recruit {
+    .tag-highlight {
       display: inline-block;
       font-size: 0.75rem;
-      background: #fef3c7;
-      color: #92400e;
+      background: #fee2e2;
+      color: #991b1b;
       padding: 2px 8px;
       border-radius: 999px;
       font-weight: 600;
@@ -359,9 +409,9 @@
     }
 
     .join-banner p {
-      max-width: 620px;
+      max-width: 650px;
       margin: 0 auto 28px;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       opacity: 0.95;
     }
 
@@ -387,7 +437,7 @@
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .nav-links {
         display: none;
       }
@@ -407,6 +457,11 @@
 </head>
 <body>
 
+  <!-- Top Announcement Bar -->
+  <div class="meeting-bar">
+    📍 Pack meetings held <strong>every Wednesday, 6:00 PM – 7:00 PM</strong> at <strong>1522 McCoy Ave</strong>.
+  </div>
+
   <!-- Navigation -->
   <header>
     <nav>
@@ -415,9 +470,10 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#location">Meeting Location</a></li>
         <li><a href="#dens">Dens</a></li>
         <li><a href="#calendar">2026–27 Calendar</a></li>
-        <li><a href="mailto:info@pack333.org?subject=Inquiry%20about%20Cub%20Scout%20Pack%20333">Contact</a></li>
+        <li><a href="mailto:info@pack333.org">Contact</a></li>
         <li><a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-nav">Register on BeAScout</a></li>
       </ul>
     </nav>
@@ -425,16 +481,32 @@
 
   <!-- Hero Banner -->
   <section class="hero">
-    <div class="hero-badge">2026–2027 Season Underway</div>
+    <div class="hero-badge">Cub Scouts &bull; Grades K through 5</div>
     <h1>Do Your Best. Discover More.</h1>
-    <p>Empowering kindergarten through 5th graders with outdoor skills, leadership, teamwork, and family fun.</p>
+    <p>Serving boys and girls across kindergarten through 5th grade with outdoor adventures, STEM challenges, teamwork, and family fun.</p>
     <div class="hero-actions">
       <a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-primary">Register Online (BeAScout)</a>
-      <a href="mailto:info@pack333.org?subject=Joining%20Pack%20333%20-%20Information%20Request" class="btn-secondary">Ask Questions / Email Us</a>
+      <a href="mailto:info@pack333.org?subject=Joining%20Pack%20333%20-%20Information%20Request" class="btn-secondary">Email info@pack333.org</a>
     </div>
   </section>
 
   <div class="container">
+
+    <!-- Meeting Location Card -->
+    <section id="location">
+      <div class="meeting-card">
+        <div>
+          <h3>📍 Meeting Time & Location</h3>
+          <p>
+            <strong>When:</strong> Every Wednesday from 6:00 PM to 7:00 PM<br />
+            <strong>Where:</strong> 1522 McCoy Ave, San Jose, CA 95130
+          </p>
+        </div>
+        <div>
+          <a href="https://maps.google.com/?q=1522+McCoy+Ave,+San+Jose,+CA+95130" target="_blank" rel="noopener" class="btn-primary" style="padding: 10px 20px; font-size: 0.95rem;">Get Directions &rarr;</a>
+        </div>
+      </div>
+    </section>
 
     <!-- About / Pillars -->
     <section id="about">
@@ -452,7 +524,7 @@
         <div class="card">
           <span class="card-icon">🏎️</span>
           <h3>Pinewood Derby & STEM</h3>
-          <p>Build and race custom wooden cars, participate in Raingutter Regattas, and explore science and engineering hands-on.</p>
+          <p>Build and race custom wooden cars, participate in Raingutter Regattas, and explore science and engineering challenges hands-on.</p>
         </div>
         <div class="card">
           <span class="card-icon">🤝</span>
@@ -465,7 +537,7 @@
     <!-- Dens by Grade -->
     <section id="dens" style="margin-top: 60px;">
       <div class="section-title">
-        <h2>Dens by Grade Level</h2>
+        <h2>Dens by Grade Level (K–5)</h2>
         <p>Scouts meet with peers in age-tailored dens before coming together as a full pack.</p>
       </div>
 
@@ -483,7 +555,7 @@
     <section id="calendar" style="margin-top: 60px;">
       <div class="section-title">
         <h2>2026–2027 Pack Calendar</h2>
-        <p>All scheduled meetings, camping trips, service projects, and special pack events.</p>
+        <p>All scheduled pack meetings, campouts, and special events.</p>
       </div>
 
       <!-- Fall 2026 -->
@@ -518,7 +590,7 @@
           <div class="event-date"><span class="month">Sep</span><span class="day">2</span></div>
           <div class="event-info">
             <h4>Open House: Raingutter Regatta <span class="tag-recruit">Join Night</span></h4>
-            <p>6:00 PM – 7:00 PM at St. Thomas of Canterbury. Welcome new families to race boats and learn about Scouting!</p>
+            <p>6:00 PM – 7:00 PM at 1522 McCoy Ave. Welcome new families to race boats and learn about Scouting!</p>
           </div>
         </div>
 
@@ -757,7 +829,7 @@
     <section id="contact">
       <div class="join-banner">
         <h2>Ready to Start Your Scout Journey?</h2>
-        <p>We welcome all boys and girls in grades K–5. Register directly online or get in touch with our pack committee to learn more or visit a meeting.</p>
+        <p>We welcome all boys and girls in grades K–5. Register directly on BeAScout or contact our leadership team with any questions!</p>
         <div class="join-actions">
           <a href="https://beascout.scouting.org/units/D62778B2-6ACB-4AE5-B447-55D8CC074ADA" target="_blank" rel="noopener" class="btn-primary">Register on BeAScout</a>
           <a href="mailto:info@pack333.org?subject=Joining%20Pack%20333%20-%20Parent%20Inquiry" class="btn-secondary">Email info@pack333.org</a>
@@ -769,9 +841,14 @@
 
   <!-- Footer -->
   <footer>
-    <p>Cub Scout Pack 333 &bull; Character &bull; Citizenship &bull; Fitness &bull; Fun</p>
-    <p style="margin-top: 6px;">Questions? Reach us at <a href="mailto:info@pack333.org">info@pack333.org</a></p>
-    <p style="margin-top: 8px; font-size: 0.8rem; color: #64748b;">Prepared. For Life. &bull; Hosted with GitHub Pages</p>
+    <p><strong>Cub Scout Pack 333</strong> &bull; Grades K–5</p>
+    <p style="margin-top: 6px;">
+      Meetings: Wednesdays, 6:00 PM – 7:00 PM at 1522 McCoy Ave, San Jose, CA 95130
+    </p>
+    <p style="margin-top: 4px;">
+      Questions? Reach us at <a href="mailto:info@pack333.org">info@pack333.org</a>
+    </p>
+    <p style="margin-top: 12px; font-size: 0.8rem; color: #64748b;">Prepared. For Life. &bull; Hosted with GitHub Pages</p>
   </footer>
 
 </body>
